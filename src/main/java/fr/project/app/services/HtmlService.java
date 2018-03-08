@@ -81,9 +81,9 @@ public class HtmlService {
 			match.setOver50odd(Integer.parseInt(elements.get((elements.size() - 2)).text()));
 
 			if (elements.hasClass("uop")) {
-				match.setGoalsOdd(true);
+				match.setGoalsSuccess(true);
 			} else {
-				match.setGoalsOdd(false);
+				match.setGoalsSuccess(false);
 			}
 
 			
@@ -97,6 +97,7 @@ public class HtmlService {
 			/* Rajouter les infos sur le résultat du tip via le <span> */
 			Elements spanList = elements.tagName("span");
 			String tipResult = spanList.get(11).text();
+			match.setTip(tipResult);
 			match.setTipSuccess(parisService.getTipSuccess(tipResult));
 			
 			if(elements.get(12).text().length()>1)	{

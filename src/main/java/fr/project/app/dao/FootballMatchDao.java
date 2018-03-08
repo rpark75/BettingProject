@@ -10,14 +10,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import fr.project.app.controllers.BettingController;
 import fr.project.app.entities.FootballMatchEntity;
 import fr.project.app.services.HibernateService;
 
 @Repository
 public class FootballMatchDao {
 	
-	private static final Logger betLogger = LoggerFactory.getLogger(BettingController.class);
+	private static final Logger betLogger = LoggerFactory.getLogger(FootballMatchDao.class);
 
 	@Autowired
 	HibernateService hibernateService;

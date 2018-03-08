@@ -7,13 +7,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import fr.project.app.controllers.BettingController;
 import fr.project.app.entities.FootballMatchEntity;
 
 @Service
 public class HibernateService {
 
-	private static final Logger betLogger = LoggerFactory.getLogger(BettingController.class);
+	private static final Logger betLogger = LoggerFactory.getLogger(HibernateService.class);
 	
 	public SessionFactory getSessionFactory() {
 		betLogger.trace("Chargement de la config Hibernate..");

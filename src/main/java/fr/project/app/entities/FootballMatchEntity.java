@@ -45,6 +45,9 @@ public class FootballMatchEntity {
 	private boolean highestProbaGagnante;
 
 	@Column
+	private String tip;
+
+	@Column
 	private boolean tipSuccess;
 
 	@Column
@@ -73,7 +76,7 @@ public class FootballMatchEntity {
 	 * 2.5) est correcte.
 	 */
 	@Column
-	private boolean goalsOdd;
+	private boolean goalsSuccess;
 
 	@Column
 	private String site;
@@ -86,9 +89,9 @@ public class FootballMatchEntity {
 	}
 
 	public FootballMatchEntity(int id, String league, String match, int proba1, int probaX, int proba2,
-			int probaGagnante, boolean highestProbaGagnante, boolean tipSuccess, double odd1, double oddX, double odd2,
-			double oddGagnant, boolean lowestOddSuccess, int over50odd, int under50odd, boolean goalsOdd, String site,
-			String date) {
+			int probaGagnante, boolean highestProbaGagnante, String tip, boolean tipSuccess, double odd1, double oddX,
+			double odd2, double oddGagnant, boolean lowestOddSuccess, int over50odd, int under50odd, boolean goalsSuccess,
+			String site, String date) {
 		super();
 		this.id = id;
 		this.league = league;
@@ -98,6 +101,7 @@ public class FootballMatchEntity {
 		this.proba2 = proba2;
 		this.probaGagnante = probaGagnante;
 		this.highestProbaGagnante = highestProbaGagnante;
+		this.tip = tip;
 		this.tipSuccess = tipSuccess;
 		this.odd1 = odd1;
 		this.oddX = oddX;
@@ -106,7 +110,7 @@ public class FootballMatchEntity {
 		this.lowestOddSuccess = lowestOddSuccess;
 		this.over50odd = over50odd;
 		this.under50odd = under50odd;
-		this.goalsOdd = goalsOdd;
+		this.goalsSuccess = goalsSuccess;
 		this.site = site;
 		this.date = date;
 	}
@@ -175,6 +179,14 @@ public class FootballMatchEntity {
 		this.highestProbaGagnante = highestProbaGagnante;
 	}
 
+	public String getTip() {
+		return tip;
+	}
+
+	public void setTip(String tip) {
+		this.tip = tip;
+	}
+
 	public boolean isTipSuccess() {
 		return tipSuccess;
 	}
@@ -239,12 +251,12 @@ public class FootballMatchEntity {
 		this.under50odd = under50odd;
 	}
 
-	public boolean isGoalsOdd() {
-		return goalsOdd;
+	public boolean isGoalsSuccess() {
+		return goalsSuccess;
 	}
 
-	public void setGoalsOdd(boolean goalsOdd) {
-		this.goalsOdd = goalsOdd;
+	public void setGoalsSuccess(boolean goalsSuccess) {
+		this.goalsSuccess = goalsSuccess;
 	}
 
 	public String getSite() {
@@ -267,10 +279,10 @@ public class FootballMatchEntity {
 	public String toString() {
 		return "FootballMatchEntity [id=" + id + ", league=" + league + ", match=" + match + ", proba1=" + proba1
 				+ ", probaX=" + probaX + ", proba2=" + proba2 + ", probaGagnante=" + probaGagnante
-				+ ", highestProbaGagnante=" + highestProbaGagnante + ", tipSuccess=" + tipSuccess + ", odd1=" + odd1
-				+ ", oddX=" + oddX + ", odd2=" + odd2 + ", oddGagnant=" + oddGagnant + ", lowestOddSuccess="
-				+ lowestOddSuccess + ", over50odd=" + over50odd + ", under50odd=" + under50odd + ", goalsOdd="
-				+ goalsOdd + ", site=" + site + ", date=" + date + "]";
+				+ ", highestProbaGagnante=" + highestProbaGagnante + ", tip=" + tip + ", tipSuccess=" + tipSuccess
+				+ ", odd1=" + odd1 + ", oddX=" + oddX + ", odd2=" + odd2 + ", oddGagnant=" + oddGagnant
+				+ ", lowestOddSuccess=" + lowestOddSuccess + ", over50odd=" + over50odd + ", under50odd=" + under50odd
+				+ ", goalsSuccess=" + goalsSuccess + ", site=" + site + ", date=" + date + "]";
 	}
 
 }
